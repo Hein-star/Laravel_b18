@@ -1,0 +1,57 @@
+Project Flow (E-com / S-com)
+===========
+  - item management
+  - user management
+  - order management
+
+  * Daily Report
+  * Monthly Report
+
+CRUD
+====
+  - php artisan make:model Category -m -r
+  - create resource route (web.php)
+  - create resource view folder (resources/views/)
+  
+Database Structure
+==================
+  - item (3-11-2020)
+    2- categories (name, photo)
+    3- subcategories (name, category_id)
+    1- brands (name, photo)
+    4- items (codeno, brand_id, subcategory_id, name, photo, price, discount, description)
+
+  - Authentication
+    -install laravel/ui package
+    -bootstrap --auth
+
+    (install node in your os)
+    -npm install
+    -npm rum dev
+    -localhost:8000/login
+
+  - Roles
+    - spatie/laravel-permission package
+
+  - user
+    - roles
+    - users
+
+  - order
+    - orders(id, orderno, total, customer_info, note) => 1
+            - 1 , 0001,  200,   1,  'dskjfhkdsf'
+    - orderdetails(id, order_info, item_info, qty) => 2
+                  - 1,  1,  3,  2
+                  - 2,  1,  5,  5
+
+                  - 3,  2,  3,  5
+                  - 4,  2,  1,  2
+
+  Voucher
+  -------
+
+  Qty   |   name       | Subtotal
+    2     item one(50)    100
+    5     item two(20)    100
+  ------------------------------
+          Total           200
