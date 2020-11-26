@@ -1,5 +1,22 @@
 @extends('frontendtemplate')
-
+<style type="text/css">
+   .pointer {
+      cursor: pointer;
+    }
+    .img-zoom {
+      display: block;
+    }
+    .img-zoom img {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+    }
+    .img-zoom:hover img {
+      -webkit-transform: scale(1.3);
+      transform: scale(1.1);
+    }
+ </style>
 @section('content')
 
 	<div class="container">
@@ -56,10 +73,10 @@
         <h1 class="text-center text-white">Brand Products</h1>
       </div>
       @foreach($brands as $brand)
-      <div class="col-lg-3 col-md-6 mb-4 my-4 text-center">
+      <div class="col-lg-3 col-md-6 mb-4 my-4 text-center img-zoom" tabindex="-1">
         <div class="card h-100">
           <img src="{{asset($brand->photo)}}" class="card-img-top" alt="" width="700" height="200">
-          <h4 class="card-title">{{$brand->name}}</h4>
+          <h4 class="card-title mt-4">{{$brand->name}}</h4>
           {{-- <h5>{{$brand->price}} MMK</h5> --}}
           <div class="card-footer">
             <button class="btn btn-info form-control addtocartBtn" 

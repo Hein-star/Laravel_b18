@@ -81,7 +81,7 @@
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
             <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i> Settings</a></li>
             <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-            <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+            <li><a class="dropdown-item" href="{{route('mainpage')}}"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -89,19 +89,13 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="backend_asset/images/user.webp" alt="User Image" width="50" height="50">
         <div>
           <p class="app-sidebar__user-name">Hein Htet Zaw</p>
           <p class="app-sidebar__user-designation">Admin</p>
         </div>
       </div>
       <ul class="app-menu">
-        <li>
-          <a class="app-menu__item" href="#">
-            <i class="app-menu__icon fa fa-dashboard"></i>
-            <span class="app-menu__label">Dashboard</span>
-          </a>
-        </li>
         <li>
           <a class="app-menu__item {{ Request::is('brand*') ? 'active' : ''}}" href="{{route('brand.index')}}">
             <i class="app-menu__icon fas fa-american-sign-language-interpreting"></i>
@@ -132,12 +126,12 @@
             <span class="app-menu__label">Orders</span>
           </a>
         </li>
-        <!-- <li>
-          <a class="app-menu__item" href="#">
-            <i class="app-menu__icon fa fa-pie-chart"></i>
-            <span class="app-menu__label">Users</span>
+        <li>
+          <a class="app-menu__item" href="{{route('mainpage')}}">
+            <i class="app-menu__icon fa fa-lock"></i>
+            <span class="app-menu__label">Logout</span>
           </a>
-        </li> -->
+        </li>
       </ul>
     </aside>
     

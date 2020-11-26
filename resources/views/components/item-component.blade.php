@@ -1,7 +1,22 @@
-<!-- <div>
-    Knowing is not enough; we must apply. Being willing is not enough; we must do. - Leonardo da Vinci
-</div> -->
-<div class="col-lg-3 col-md-6 mb-4 my-4">
+<style type="text/css">
+   .pointer {
+      cursor: pointer;
+    }
+    .img-zoom {
+      display: block;
+    }
+    .img-zoom img {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+    }
+    .img-zoom:hover img {
+      -webkit-transform: scale(1.3);
+      transform: scale(1.1);
+    }
+ </style>
+<div class="col-lg-3 col-md-6 mb-4 my-4 img-zoom" tabindex="-1">
     <div class="card h-100">
         <a href="{{ route('itemdetail', $item->id) }}"><img width="700" height="200" style="object-fit: cover;"
                 class="card-img-top img_hover" src="{{ asset($item->photo) }}" alt=""></a>

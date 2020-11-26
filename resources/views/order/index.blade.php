@@ -74,7 +74,7 @@
                         <span class="text-dark">{{ date('Y-M-d', strtotime($row->order_date)) }}</span>
                       </td>
                       <td>
-                        <span class="text-dark font-weight-bold">{{$row->totalamount}} MMK</span>
+                        <span class="text-dark font-weight-bold">{{number_format($row->totalamount)}} MMK</span>
                       </td>
                       <td>
                         <a href="{{route('order.show',$row->id)}}" class="btn btn-outline-info">Detail</a> 
@@ -90,11 +90,10 @@
                 <thead>
                   <tr>
                     <th>No</th>
+                    <th>Customer Name</th>
                     <th>Orderno</th>
                     <th>Orderdate</th>
                     <th>Total Amount</th>
-                    <th>Customer Name</th>
-                    {{-- <th>Action</th> --}}
                   </tr>
                 </thead>
                 <tbody>
@@ -107,20 +106,17 @@
                       <span class="text-primary">{{$i++}}</span>
                     </td>
                     <td>
+                      <div class="text-primary font-weight-bold">{{$row->user->name}}</div>
+                    </td>
+                    <td>
                       <span>{{$row->orderno}} (confirmed)</span>    
                     </td>
                     <td>
                       <span>{{ date('Y-M-d', strtotime($row->order_date)) }}</span>
                     </td>
                     <td>
-                      <span class="text-dark font-weight-bold">{{$row->totalamount}} MMK</span>
+                      <span class="text-dark font-weight-bold">{{number_format($row->totalamount)}} MMK</span>
                     </td>
-                    <td>
-                      <div class="text-primary font-weight-bold">{{$row->user->name}}</div>
-                    </td>
-                    <{{-- td>
-                      <a href="{{route('order.show',$row->id)}}" class="btn btn-outline-info">Detail</a> 
-                    </td> --}}
                   </tr>
                     @endforeach
                 </tbody>

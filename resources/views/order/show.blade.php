@@ -36,6 +36,9 @@
                   </thead>
                     {{-- table body --}}
                   <tbody id="shoppingcart_table">
+                    @php
+                    $total = 0;
+                    @endphp
                     @foreach($order->items as $item)
                       <tr>
                         <td>
@@ -51,7 +54,7 @@
                         </td>
                         <td>
                           <div class="mt-5">
-                            <p class="text-dark">{{$item->pivot->quantity}}</p>
+                            <p class="text-dark">{{number_format($item->pivot->quantity)}}</p>
                           </div>
                         </td>
                         <td>
@@ -62,7 +65,7 @@
                             </p>
                             <p class="font-weight-lighter text-dark">
                               <h6>Price :</h6>
-                              <span class="font-weight-bold">{{$item->price}} MMK</span>
+                              <span class="font-weight-bold">{{number_format($item->price)}} MMK</span>
                             </p>
                           </div>
                         </td>
@@ -70,19 +73,16 @@
                           <div class="mt-5">
                             <span class="text-dark font-weight-bold">
                               @php
-                              $total = 0;
                               $subTotal = 0;
-                                  if($item->discount != 0 || $item->discount != '')
-                                  {
-                                      $subTotal += $item->discount * $item->pivot->quantity;
-                                  }
-                                  else {
-                                      $subTotal += $item->price * $item->pivot->quantity;
-                                  }
-                                  $total += $subTotal;
+                                if($item->discount != 0 || $item->discount != '')
+                                {
+                                    $subTotal += $item->discount * $item->pivot->quantity;
+                                }
+                                else {
+                                    $subTotal += $item->price * $item->pivot->quantity;
+                                }$total += $subTotal;
                               echo $subTotal;
-                              @endphp
-                              MMK</span>
+                              @endphp MMK</span>
                           </div>
                         </td>
                       </tr>
@@ -91,7 +91,7 @@
                   <tfoot>
                     <tr>
                       <td colspan="4">
-                        <h3 class="text-right text-primary"> Total : {{$item->totalamount = $item->pivot->quantity * $item->price}} MMK</h3>
+                        <h3 class="text-right text-primary"> Total : {{number_format($item->totalamount = $total)}} MMK</h3>
                       </td>
                       @if($order->status == 0)
                       <td colspan="2">
