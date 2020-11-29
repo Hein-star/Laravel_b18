@@ -34,13 +34,13 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block" src="{{asset('backend_asset/images/item/computer3.jpg')}}" alt="First slide" width="900" height="460">
+              <img class="d-block" src="{{asset('backend_asset/images/item/computer3.jpg')}}" alt="First slide" width="900" height="520">
             </div>
             <div class="carousel-item">
-              <img class="d-block" src="{{asset('backend_asset/images/item/shirt4.jpg')}}" alt="Second slide" width="900" height="460">
+              <img class="d-block" src="{{asset('backend_asset/images/item/shirt4.jpg')}}" alt="Second slide" width="900" height="520">
             </div>
             <div class="carousel-item">
-              <img class="d-block" src="{{asset('backend_asset/images/item/slide1.jpg')}}" alt="Third slide" width="900" height="460">
+              <img class="d-block" src="{{asset('backend_asset/images/item/slide1.jpg')}}" alt="Third slide" width="900" height="520">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -56,8 +56,8 @@
     </div>
     {{-- Carousel Indicators End --}}
 
-    {{-- Promotion Product Start --}}
-    <div class="row my-4">
+    {{-- Promotion Product Start --}} 
+    <div id="promotion" class="row my-4">
       <div class="col-md-12 bg-dark">
         <h1 class="text-center text-white">Promotion Products</h1>
       </div>
@@ -74,11 +74,11 @@
       </div>
       @foreach($brands as $brand)
       <div class="col-lg-3 col-md-6 mb-4 my-4 text-center img-zoom" tabindex="-1">
-        <div class="card h-100">
+        <div class="h-100">
           <img src="{{asset($brand->photo)}}" class="card-img-top" alt="" width="700" height="200">
-          <h4 class="card-title mt-4">{{$brand->name}}</h4>
+          <h4 class="title mt-4">{{$brand->name}}</h4>
           {{-- <h5>{{$brand->price}} MMK</h5> --}}
-          <div class="card-footer">
+          <div class="footer">
             <button class="btn btn-info form-control addtocartBtn" 
                     data-id="{{$item->id}}"
                     data-name="{{$item->name}}"

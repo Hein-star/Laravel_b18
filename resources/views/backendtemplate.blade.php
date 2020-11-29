@@ -89,7 +89,7 @@
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="backend_asset/images/user.webp" alt="User Image" width="50" height="50">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="backend_asset/images/user.png" width="50" height="50">
         <div>
           <p class="app-sidebar__user-name">Hein Htet Zaw</p>
           <p class="app-sidebar__user-designation">Admin</p>

@@ -17,7 +17,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = Item::all();
+        $items = Item::limit(6)->get();
         return view('item.index',compact('items'));
     }
 
@@ -146,9 +146,9 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy($id)
     {
-        $item = Item::find($item);
+        $item = Item::find($id);
         $item->Delete();
         return redirect()->route('item.index');
     }

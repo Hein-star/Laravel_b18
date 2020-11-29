@@ -11,7 +11,7 @@ class FrontendController extends Controller
 {
     public function home($value='')
     {
-    	$items = Item::all();
+    	$items = Item::limit(8)->get();
         $brands = Brand::all();
     	return view('frontend.mainpage', compact('items', 'brands'));
     }

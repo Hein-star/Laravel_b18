@@ -17,33 +17,28 @@
     }
  </style>
 <div class="col-lg-3 col-md-6 mb-4 my-4 img-zoom" tabindex="-1">
-    <div class="card h-100">
+    <div class="h-100">
         <a href="{{ route('itemdetail', $item->id) }}"><img width="700" height="200" style="object-fit: cover;"
                 class="card-img-top img_hover" src="{{ asset($item->photo) }}" alt=""></a>
-        <div class="card-body">
-            <div class="mb-2 text-muted">
-                <a href="{{ route('itemdetail', $item->id) }}" class="text-decoration-none text-muted">
-                    show detail
-                </a>
-            </div>
-            <h5 class="card-title">
-                <a href="{{ route('itemdetail', $item->id) }}">{{ $item->name }}</a>
-            </h5>
-            <h4 class="text-success">
-                @if ($item->discount == 0 or $item->discount == '')
-                    <div> {{ $item->price . ' mmk' }}</div>
-                @else
-                    {{ $item->discount . ' mmk ' }}
-                    <div>
-                        <small>
-                            <del class="text-muted">{{ $item->price . ' mmk' }}.</del>
-                        </small>
-                    </div>
-                @endif
-            </h4>
-            <p class="card-text text-muted">{{ $item->description }}</p>
+        <div class="body mt-4 text-center">
+          <h5 class="title">
+              <a href="{{ route('itemdetail', $item->id) }}">{{ $item->name }}</a>
+          </h5>
+          <h4 class="text-success">
+              @if ($item->discount == 0 or $item->discount == '')
+                  <div> {{ $item->price . ' mmk' }}</div>
+              @else
+                  {{ $item->discount . ' mmk ' }}
+                  <div>
+                      <small>
+                          <del class="text-muted">{{ $item->price . ' mmk' }}.</del>
+                      </small>
+                  </div>
+              @endif
+          </h4>
+          <p class="text text-muted">{{ $item->description }}</p>
         </div>
-        <div class="card-footer">
+        <div class="footer">
             <button class="btn btn-block btn-info addtocartBtn" 
                  data-id="{{$item->id}}"
                  data-name="{{$item->name}}"
